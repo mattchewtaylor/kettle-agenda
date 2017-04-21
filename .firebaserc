@@ -1,6 +1,0 @@
-{
-  "projects": {
-    "default": "kettle-agenda",
-    "staging": "kettle-agenda"
-  }
-}
