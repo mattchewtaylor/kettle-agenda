@@ -1,32 +1,83 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>Kettle Agenda</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="kettle-agenda/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+
   </head>
   <body>
-    <h1>Login or Signup</h1>
-    <div class="container">
-      <input id="email" type="email" placeholder="Email">
-      <input id="password" type="password" placeholder="Password">
-      <button id="quickstart-sign-in" class="">Sign in</button>
-      <button id="quickstart-sign-up" class="">Sign up</button>
+
+    <!-- Main nav -->
+    <nav class="flex justify-between bb b--black-10">
+      <a class="link dib blue dim no-underline flex items-center pa3" href="">
+        Kettle Agenda
+      </a>
+      <div class="flex-grow pa3 flex items-center">
+        <button id="quickstart-sign-out" class="f6 link dib blue dim mr3 mr4-ns" href="#0">Log out</button>
+        <a id="modalBtn" class="f6 dib blue dim bg-animate hover-bg-white no-underline pv2 ph4 br-pill ba b--blue-20" href="#0">Get started</a>
+      </div>
+    </nav>
+
+    <!-- Authentication modal -->
+    <div id="modalPopup" class="modal">
+      <div class="modal-content">
+        <button class="close">&times;</button>
+        <div>
+          <input id="email" type="email" placeholder="Email">
+          <input id="password" type="password" placeholder="Password">
+          <button id="quickstart-sign-in" class="f6 br-pill bg-dark-green no-underline washed-green ba b--dark-green grow pv2 ph3 dib mr3"
+            href="#">
+            Log in
+          </button>
+          <button id ="quickstart-sign-up" class="f6 br-pill dark-green no-underline ba grow pv2 ph3 dib"
+            href="#">
+            Sign up
+          </button>
+        </div>
+      </div>
     </div>
 
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyArcqUHd-4nlIZwQSAcPR5pX1HA3_V7ykw",
-    authDomain: "kettle-agenda.firebaseapp.com",
-    databaseURL: "https://kettle-agenda.firebaseio.com",
-    projectId: "kettle-agenda",
-    storageBucket: "kettle-agenda.appspot.com",
-    messagingSenderId: "968409966917"
-  };
-firebase.initializeApp(config);
-</script>
-<script src="js/app.js"></script>
+    <!-- Sign in or sign up
+    <article class="mw7 center ph3 ph5-ns tc br2 pv5 bg-washed-green dark-green mb5">
+      <h1 class="fw6 f3 f2-ns lh-title mt0 mb3">
+        Kettle Agenda
+      </h1>
+      <h2 class="fw2 f4 lh-copy mt0 mb3">
+        Get out and see the world.
+      </h2>
+      <div>
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <button id="quickstart-sign-in" class="f6 br-pill bg-dark-green no-underline washed-green ba b--dark-green grow pv2 ph3 dib mr3"
+          href="#">
+          Log in
+        </button>
+        <button id ="quickstart-sign-up" class="f6 br-pill dark-green no-underline ba grow pv2 ph3 dib"
+          href="#">
+          Sign up
+        </button>
+      </div>
+    </article>
+    -->
+
+    <div class="container">
+      <h1>Kettle Agenda</h1>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyArcqUHd-4nlIZwQSAcPR5pX1HA3_V7ykw",
+        authDomain: "kettle-agenda.firebaseapp.com",
+        databaseURL: "https://kettle-agenda.firebaseio.com",
+        projectId: "kettle-agenda",
+        storageBucket: "kettle-agenda.appspot.com",
+        messagingSenderId: "968409966917"
+      };
+    firebase.initializeApp(config);
+    </script>
+    <script src="kettle-agenda/js/app.js"></script>
   </body>
 </html>

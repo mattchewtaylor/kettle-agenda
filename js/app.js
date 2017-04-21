@@ -5,6 +5,7 @@
 /**
  * Handles the sign in button press.
  */
+
 function toggleSignIn() {
   if (firebase.auth().currentUser) {
     // [START signout]
@@ -40,6 +41,14 @@ function toggleSignIn() {
     // [END authwithemail]
   }
   document.getElementById('quickstart-sign-in').disabled = true;
+}
+
+/**
+ * Handles the sign out button press.
+ */
+function toggleSignOut() {
+  firebase.auth().signOut();
+  console.log("Signed out");
 }
 
 /**
@@ -106,7 +115,7 @@ function initApp() {
     // [END_EXCLUDE]
   });
   // [END authstatelistener]
-
+  document.getElementById('quickstart-sign-out').addEventListener('click', toggleSignOut, false);
   document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
   document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
 }
@@ -114,3 +123,27 @@ function initApp() {
 window.onload = function() {
   initApp();
 };
+
+/*********************************************/
+/********** Authentication modal **********/
+/*********************************************/
+
+// Get modal elements
+var modalPopup = document.getElementById('modalPopup');
+var modalBtn = document.getElementById('modalBtn');
+var close = document.getElementsByClassName('close');
+// Opens modal on modalBtn click
+modalBtn.onclick = function() {
+  modalPopup.style.display = "block";
+}
+// Closes the modal on 'X' click
+close.onclick = function() {
+  modalPopup.style.display = "none";
+  console.log('wtf why is this not working')
+}
+// Closes the modal on
+window.onclick = function(event) {
+  if (event.target == modalPopup) {
+    modalPopup.style.display = "none";
+  }
+}
