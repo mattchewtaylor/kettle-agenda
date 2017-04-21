@@ -137,7 +137,7 @@ modalBtn.onclick = function() {
   modalPopup.style.display = "block";
 }
 // Closes the modal on 'X' click
-close.onclick = function() {
+close[0].onclick = function() {
   modalPopup.style.display = "none";
   console.log('wtf why is this not working')
 }
